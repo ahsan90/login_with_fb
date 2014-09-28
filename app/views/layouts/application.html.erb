@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LoginWithFb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id=user-widget">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav nav-pills pull-right">
+        <% if current_user %>
+        <li>Welcome <strong><%= current_user.name %></strong><br/>
+        Your Facebook Id is: <strong><%= current_user.uid %></strong></li>
+        <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <% end %>
+      </ul>
+
+  </div>
+  </nav>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div class="container">
+  <div id=user-widget">
+          <% if current_user %>
+              <p>Welcome <strong><%= current_user.name %></strong><br/>
+                Your Facebook Id is: <strong><%= current_user.uid %></strong></p>
+              <p><%= link_to "Sign out", signout_path, id: "sign_out" %></p>
+          <% else %>
+              <p><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></p>
+          <% end %>
+  </div>
+</div>
